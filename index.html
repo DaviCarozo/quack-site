@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Comandos do Quack Bot 🦆</title>
-  <link rel="icon" href="quack-icon.png" type="image/png">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -19,10 +18,29 @@
       text-align: center;
       border-radius: 8px;
     }
-    header img {
-      width: 80px;
-      border-radius: 50%;
-      margin-bottom: 10px;
+    .botao-adicionar {
+      margin-top: 15px;
+      text-align: center;
+    }
+    .botao-adicionar a {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 20px;
+      background: white;
+      color: #4db6ac;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: background 0.2s ease;
+    }
+    .botao-adicionar a:hover {
+      background: #e0f2f1;
+    }
+    .botao-adicionar img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
     }
     .busca {
       margin: 20px 0;
@@ -53,63 +71,40 @@
 </head>
 <body>
   <header>
-    <img src="img/quack-icon.png" alt="Logo do Quack Bot">
     <h1>📜 Comandos do Quack Bot 🦆</h1>
-    <a href="https://discord.com/oauth2/authorize?client_id=1358922300472430643&permissions=8&integration_type=0&scope=bot" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #ffffff; color: #4db6ac; border-radius: 8px; font-weight: bold; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: background 0.2s ease;">
+    <div class="botao-adicionar">
+      <a href="https://discord.com/oauth2/authorize?client_id=1358922300472430643&permissions=8&integration_type=0&scope=bot" target="_blank">
+        <img src="quack-icon.png" alt="Quack Bot" />
         ➕ Adicionar o Quack Bot
       </a>
-      
+    </div>
   </header>
 
   <div class="busca">
-    <input type="text" id="filtro" placeholder="🔍 Buscar comando...">
+    <input type="text" id="filtro" placeholder="🔍 Buscar comando..." />
   </div>
 
   <div id="comandos">
-    <div class="comando">
-      <h3>/saldo</h3>
-      <p>Veja seu saldo de QuackCoins.</p>
-    </div>
-    <div class="comando">
-      <h3>/transferir</h3>
-      <p>Envie QuackCoins para outro usuário.</p>
-    </div>
-    <div class="comando">
-      <h3>/apostar</h3>
-      <p>Aposte uma quantidade de QuackCoins (ganha ou perde).</p>
-    </div>
-    <div class="comando">
-      <h3>/diario</h3>
-      <p>Pegue sua recompensa diária com streak e bônus.</p>
-    </div>
-    <div class="comando">
-      <h3>/ranking</h3>
-      <p>Veja o top 5 usuários mais ricos do servidor.</p>
-    </div>
-    <div class="comando">
-      <h3>/calcular</h3>
-      <p>Executa um cálculo simples (ex: 2 + 2).</p>
-    </div>
-    <div class="comando">
-      <h3>/caraoucoroa</h3>
-      <p>Joga cara ou coroa com a moeda do bot.</p>
-    </div>
-    <div class="comando">
-      <h3>/misturar</h3>
-      <p>Mistura duas ou três palavras em uma bagunça divertida.</p>
-    </div>
+    <div class="comando"><h3>/saldo</h3><p>Veja seu saldo de QuackCoins.</p></div>
+    <div class="comando"><h3>/transferir</h3><p>Envie QuackCoins para outro usuário.</p></div>
+    <div class="comando"><h3>/apostar</h3><p>Aposte uma quantidade de QuackCoins (ganha ou perde).</p></div>
+    <div class="comando"><h3>/diario</h3><p>Pegue sua recompensa diária com streak e bônus.</p></div>
+    <div class="comando"><h3>/ranking</h3><p>Veja o top 5 usuários mais ricos do servidor.</p></div>
+    <div class="comando"><h3>/calcular</h3><p>Executa um cálculo simples (ex: 2 + 2).</p></div>
+    <div class="comando"><h3>/caraoucoroa</h3><p>Joga cara ou coroa com a moeda do bot.</p></div>
+    <div class="comando"><h3>/misturar</h3><p>Mistura duas ou três palavras em uma bagunça divertida.</p></div>
   </div>
 
   <script>
-    const filtro = document.getElementById('filtro');
-    const comandos = document.querySelectorAll('.comando');
+    const filtro = document.getElementById("filtro");
+    const comandos = document.querySelectorAll(".comando");
 
-    filtro.addEventListener('input', () => {
+    filtro.addEventListener("input", () => {
       const valor = filtro.value.toLowerCase();
-      comandos.forEach(cmd => {
-        const titulo = cmd.querySelector('h3').textContent.toLowerCase();
-        const desc = cmd.querySelector('p').textContent.toLowerCase();
-        cmd.style.display = titulo.includes(valor) || desc.includes(valor) ? 'block' : 'none';
+      comandos.forEach((cmd) => {
+        const titulo = cmd.querySelector("h3").textContent.toLowerCase();
+        const desc = cmd.querySelector("p").textContent.toLowerCase();
+        cmd.style.display = titulo.includes(valor) || desc.includes(valor) ? "block" : "none";
       });
     });
   </script>
