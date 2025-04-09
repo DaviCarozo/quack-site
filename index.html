@@ -1,90 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <link rel="icon" href="quack-icon.png" type="image/png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Comandos do Quack Bot 🦆</title>
   <style>
-    :root {
-      --cor-fundo: #f2f2f2;
-      --cor-header: #4db6ac;
-      --cor-texto: #333;
-      --cor-card: white;
-      --cor-shadow: rgba(0, 0, 0, 0.1);
-    }
-
-    body.dark {
-      --cor-fundo: #121212;
-      --cor-header: #263238;
-      --cor-texto: #eee;
-      --cor-card: #1e1e1e;
-      --cor-shadow: rgba(255, 255, 255, 0.05);
-    }
-
     body {
       font-family: Arial, sans-serif;
-      background: var(--cor-fundo);
+      background: #f2f2f2;
       margin: 0;
       padding: 20px;
-      color: var(--cor-texto);
-      transition: 0.3s;
     }
-
     header {
-      background: var(--cor-header);
+      background: #4db6ac;
       color: white;
-      padding: 15px 20px;
+      padding: 20px;
+      text-align: center;
       border-radius: 8px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      justify-content: space-between;
     }
-
-    .logo-area {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-
-    header img {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    .botoes {
-      display: flex;
-      gap: 10px;
-    }
-
-    .botoes button, .botoes a {
-      background: white;
-      color: #333;
-      padding: 8px 14px;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .botoes button:hover, .botoes a:hover {
-      background: #ddd;
-    }
-
     .busca {
       margin: 20px 0;
       text-align: center;
     }
-
     input[type="text"] {
       width: 60%;
       padding: 10px;
@@ -92,34 +29,25 @@
       border-radius: 8px;
       border: 1px solid #ccc;
     }
-
     .comando {
-      background: var(--cor-card);
+      background: white;
       border-radius: 10px;
       padding: 15px;
       margin-bottom: 15px;
-      box-shadow: 0 2px 4px var(--cor-shadow);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-
     .comando h3 {
       margin: 0 0 5px;
     }
-
     .comando p {
       margin: 0;
+      color: #333;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo-area">
-      <img src="quack-icon.png" alt="Quack Bot">
-      <h1>📜 Comandos do Quack Bot 🦆</h1>
-    </div>
-    <div class="botoes">
-      <a href="https://discord.com/oauth2/authorize?client_id=1358922300472430643&permissions=8&integration_type=0&scope=bot" target="_blank">➕ Convidar Bot</a>
-      <button id="darkToggle">🌙 Tema</button>
-    </div>
+    <h1>📜 Comandos do Quack Bot 🦆</h1>
   </header>
 
   <div class="busca">
@@ -127,44 +55,20 @@
   </div>
 
   <div id="comandos">
-    <div class="comando">
-      <h3>/saldo</h3>
-      <p>Veja seu saldo de QuackCoins.</p>
-    </div>
-    <div class="comando">
-      <h3>/transferir</h3>
-      <p>Envie QuackCoins para outro usuário.</p>
-    </div>
-    <div class="comando">
-      <h3>/apostar</h3>
-      <p>Aposte uma quantidade de QuackCoins (ganha ou perde).</p>
-    </div>
-    <div class="comando">
-      <h3>/diario</h3>
-      <p>Pegue sua recompensa diária com streak e bônus.</p>
-    </div>
-    <div class="comando">
-      <h3>/ranking</h3>
-      <p>Veja o top 5 usuários mais ricos do servidor.</p>
-    </div>
-    <div class="comando">
-      <h3>/calcular</h3>
-      <p>Executa um cálculo simples (ex: 2 + 2).</p>
-    </div>
-    <div class="comando">
-      <h3>/caraoucoroa</h3>
-      <p>Joga cara ou coroa com a moeda do bot.</p>
-    </div>
-    <div class="comando">
-      <h3>/misturar</h3>
-      <p>Mistura duas ou três palavras em uma bagunça divertida.</p>
-    </div>
+    <div class="comando"><h3>/saldo</h3><p>Veja seu saldo de QuackCoins.</p></div>
+    <div class="comando"><h3>/transferir</h3><p>Envie QuackCoins para outro usuário.</p></div>
+    <div class="comando"><h3>/apostar</h3><p>Aposte uma quantidade de QuackCoins (ganha ou perde).</p></div>
+    <div class="comando"><h3>/diario</h3><p>Pegue sua recompensa diária com streak e bônus.</p></div>
+    <div class="comando"><h3>/ranking</h3><p>Veja o top 5 usuários mais ricos do servidor.</p></div>
+    <div class="comando"><h3>/calcular</h3><p>Executa um cálculo simples (ex: 2 + 2).</p></div>
+    <div class="comando"><h3>/caraoucoroa</h3><p>Joga cara ou coroa com a moeda do bot.</p></div>
+    <div class="comando"><h3>/misturar</h3><p>Mistura duas ou três palavras em uma bagunça divertida.</p></div>
+    <div class="comando"><h3>/afk</h3><p>Fique ausente. Quem te mencionar terá a mensagem deletada até você voltar.</p></div>
   </div>
 
   <script>
     const filtro = document.getElementById('filtro');
     const comandos = document.querySelectorAll('.comando');
-    const darkToggle = document.getElementById('darkToggle');
 
     filtro.addEventListener('input', () => {
       const valor = filtro.value.toLowerCase();
@@ -173,10 +77,6 @@
         const desc = cmd.querySelector('p').textContent.toLowerCase();
         cmd.style.display = titulo.includes(valor) || desc.includes(valor) ? 'block' : 'none';
       });
-    });
-
-    darkToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
     });
   </script>
 </body>
