@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comandos do Quack Bot 🦆</title>
+  <link rel="icon" href="quack-icon.png" type="image/png">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,30 +18,6 @@
       padding: 20px;
       text-align: center;
       border-radius: 8px;
-    }
-    .botao-adicionar {
-      margin-top: 15px;
-      text-align: center;
-    }
-    .botao-adicionar a {
-      display: inline-flex;
-      align-items: center;
-      padding: 10px 20px;
-      background: white;
-      color: #4db6ac;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: background 0.2s ease;
-    }
-    .botao-adicionar a:hover {
-      background: #e0f2f1;
-    }
-    .botao-adicionar img {
-      width: 24px;
-      height: 24px;
-      margin-right: 10px;
     }
     .busca {
       margin: 20px 0;
@@ -71,17 +48,12 @@
 </head>
 <body>
   <header>
-    <h1>📜 Comandos do Quack Bot 🦆</h1>
-    <div class="botao-adicionar">
-      <a href="https://discord.com/oauth2/authorize?client_id=1358922300472430643&permissions=8&integration_type=0&scope=bot" target="_blank">
-        <img src="quack-icon.png" alt="Quack Bot" />
-        ➕ Adicionar o Quack Bot
-      </a>
-    </div>
+    <img src="quack-icon.png" alt="Quack Bot" width="64" height="64" style="vertical-align: middle;">
+    <h1 style="display: inline-block; margin-left: 10px;">📜 Comandos do Quack Bot 🦆</h1>
   </header>
 
   <div class="busca">
-    <input type="text" id="filtro" placeholder="🔍 Buscar comando..." />
+    <input type="text" id="filtro" placeholder="🔍 Buscar comando...">
   </div>
 
   <div id="comandos">
@@ -96,15 +68,15 @@
   </div>
 
   <script>
-    const filtro = document.getElementById("filtro");
-    const comandos = document.querySelectorAll(".comando");
+    const filtro = document.getElementById('filtro');
+    const comandos = document.querySelectorAll('.comando');
 
-    filtro.addEventListener("input", () => {
+    filtro.addEventListener('input', () => {
       const valor = filtro.value.toLowerCase();
-      comandos.forEach((cmd) => {
-        const titulo = cmd.querySelector("h3").textContent.toLowerCase();
-        const desc = cmd.querySelector("p").textContent.toLowerCase();
-        cmd.style.display = titulo.includes(valor) || desc.includes(valor) ? "block" : "none";
+      comandos.forEach(cmd => {
+        const titulo = cmd.querySelector('h3').textContent.toLowerCase();
+        const desc = cmd.querySelector('p').textContent.toLowerCase();
+        cmd.style.display = titulo.includes(valor) || desc.includes(valor) ? 'block' : 'none';
       });
     });
   </script>
