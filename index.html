@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comandos do Quack Bot 🦆</title>
+  <link rel="icon" href="img/quack-icon.png" type="image/png">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,6 +18,11 @@
       padding: 20px;
       text-align: center;
       border-radius: 8px;
+    }
+    header img {
+      width: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
     }
     .busca {
       margin: 20px 0;
@@ -43,28 +49,16 @@
       margin: 0;
       color: #333;
     }
-    .invite-button {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 12px 24px;
-      background-color: #5865F2;
-      color: white;
-      border-radius: 8px;
-      font-size: 18px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-    .invite-button:hover {
-      background-color: #4752c4;
-    }
-    .button-container {
-      text-align: center;
-    }
   </style>
 </head>
 <body>
   <header>
+    <img src="img/quack-icon.png" alt="Logo do Quack Bot">
     <h1>📜 Comandos do Quack Bot 🦆</h1>
+    <a href="https://discord.com/oauth2/authorize?client_id=1358922300472430643&permissions=8&integration_type=0&scope=bot" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background: #ffffff; color: #4db6ac; border-radius: 8px; font-weight: bold; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: background 0.2s ease;">
+        ➕ Adicionar o Quack Bot
+      </a>
+      
   </header>
 
   <div class="busca">
@@ -104,12 +98,6 @@
       <h3>/misturar</h3>
       <p>Mistura duas ou três palavras em uma bagunça divertida.</p>
     </div>
-  </div>
-
-  <div class="button-container">
-    <a href="https://discord.com/oauth2/authorize?client_id=1358922300472430643&permissions=8&integration_type=0&scope=bot" class="invite-button">
-      ➕ Convidar o Quack Bot
-    </a>
   </div>
 
   <script>
