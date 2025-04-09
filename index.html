@@ -4,50 +4,110 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Comandos do Quack Bot 🦆</title>
+  <link rel="icon" href="quack-icon.png" />
   <style>
+    :root {
+      --bg: #f2f2f2;
+      --text: #222;
+      --card: white;
+    }
+
+    .dark-mode {
+      --bg: #121212;
+      --text: #eee;
+      --card: #1e1e1e;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      background: #f2f2f2;
+      background: var(--bg);
+      color: var(--text);
       margin: 0;
       padding: 20px;
+      transition: 0.3s ease;
     }
+
     header {
       background: #4db6ac;
       color: white;
       padding: 20px;
       text-align: center;
       border-radius: 8px;
+      position: relative;
     }
+
+    .logo {
+      position: absolute;
+      left: 20px;
+      top: 15px;
+      height: 40px;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+
+    .buttons button,
+    .buttons a {
+      background: white;
+      color: #4db6ac;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .buttons button:hover,
+    .buttons a:hover {
+      background: #4db6ac;
+      color: white;
+    }
+
     .busca {
       margin: 20px 0;
       text-align: center;
     }
+
     input[type="text"] {
       width: 60%;
       padding: 10px;
       font-size: 16px;
       border-radius: 8px;
       border: 1px solid #ccc;
+      background: var(--card);
+      color: var(--text);
     }
+
     .comando {
-      background: white;
+      background: var(--card);
       border-radius: 10px;
       padding: 15px;
       margin-bottom: 15px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
+
     .comando h3 {
       margin: 0 0 5px;
     }
+
     .comando p {
       margin: 0;
-      color: #333;
+      color: var(--text);
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="quack-icon.png" alt="logo" class="logo" />
     <h1>📜 Comandos do Quack Bot 🦆</h1>
+    <div class="buttons">
+      <a href="https://discord.com/oauth2/authorize?client_id=1358922300472430643&permissions=8&scope=bot" target="_blank">Adicionar o Bot</a>
+      <button onclick="toggleDarkMode()">🌗 Alternar Modo</button>
+    </div>
   </header>
 
   <div class="busca">
@@ -78,6 +138,10 @@
         cmd.style.display = titulo.includes(valor) || desc.includes(valor) ? 'block' : 'none';
       });
     });
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
   </script>
 </body>
 </html>
