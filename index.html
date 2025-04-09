@@ -43,6 +43,23 @@
       margin: 0;
       color: #333;
     }
+    .invite-button {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 12px 24px;
+      background-color: #5865F2;
+      color: white;
+      border-radius: 8px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .invite-button:hover {
+      background-color: #4752c4;
+    }
+    .button-container {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -87,6 +104,12 @@
       <h3>/misturar</h3>
       <p>Mistura duas ou três palavras em uma bagunça divertida.</p>
     </div>
+  </div>
+
+  <div class="button-container">
+    <a href="https://discord.com/oauth2/authorize?client_id=1358922300472430643&permissions=8&integration_type=0&scope=bot" class="invite-button">
+      ➕ Convidar o Quack Bot
+    </a>
   </div>
 
   <script>
